@@ -16,7 +16,7 @@ public class Favorite {
     private Long id;
 
     @Column(nullable = false)
-    private String favoriteUrl;
+    private String favoriteurl;
 
     @Column(nullable = false)
     private String nickname;

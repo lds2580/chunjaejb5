@@ -10,9 +10,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 
 public interface FavoriteRepository extends JpaRepository<Favorite, Long>{
-    @Query("select p from favorite p where favoriteUrl=:favoriteUrl")
-    List<Favorite> findAllByFavoriteUrl(@Param("favoriteUrl") String favoriteUrl);
-    List<Favorite> findTop2ByFavoriteUrl(String favoriteUrl);
-    List<Favorite> findByFavoriteUrl(String favoriteUrl, Sort sort);
-    Page<Favorite> findByFavoriteUrl(String favoriteUrl, Pageable pageable);
+    @Query("select p from favorite p where favoriteurl=:favoriteurl")
+    List<Favorite> findAllByFavoriteurl(@Param("favoriteurl") String favoriteurl);
+    List<Favorite> findTop2ByFavoriteurl(String favoriteurl);
+    List<Favorite> findByFavoriteurl(String favoriteurl, Sort sort);
+    Page<Favorite> findByFavoriteurl(String favoriteurl, Pageable pageable);
 }
