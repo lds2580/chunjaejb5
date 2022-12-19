@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>favoritList</title>
+</head>
+<body>
+        <section id="app" class="container">
+            <h1>{{ title }}</h1>
+            <p v-html="contents"></p>
+            <!-- <button @click="list" class="btn btn-primary">listing</button>
+​
+            <form @submit.prevent="save" method="post" class="py-5" action="/favorite/save">
+                <div>
+                    <label>title</label>
+                    <input class="form-control" type="text" v-model="post.title">
+                </div>
+                <div>
+                    <label>contents</label>
+                    <textarea class="form-control" v-model="post.contents"></textarea>
+                </div>
+                <button class="btn btn-primary">Save</button>
+            </form> -->
+            <header>
+                <div class="wrap">
+                    <div class="category">
+                        <select name="category">
+                            <option value="" selected="selected">선택</option>
+                            <option value="edu">교육</option>
+                            <option value="shop">쇼핑</option>
+                            <option value="search">검색</option>
+                        </select>
+                    </div>
+                    <form name="input" method="post">
+                        <input type="text" name="url" placeholder="   url주소를 입력해주세요.">
+                        <button type="button" class="btn btn-outline-primary">SAVE</button>
+                    </form>
+                    <figure>
+                        <img src="https://img.youtube.com/vi/izWwT4moEYk/hqdefault.jpg" alt="">
+                    </figure>
+                </div>
+            </header>
+            <table class="table table-striped">
+                <caption style="caption-side: top;" class="text-end">total: {{ index.total }}</caption>
+                <thead>
+                    <tr style="text-align: center;">
+                        <th>id</th>
+                        <th>categoryName</th>
+                        <th class="wide">favoriteUrl</th>
+                        <th>sitename</th>
+                        <th>created</th>
+                        <th>updated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="row in index.list">
+                        <td>{{ row.id }}</td>
+                        <td>{{ row.categoryname }}</td>
+                        <td class="wide">{{ row.favoriteurl }}</td>
+                        <td>{{ row.sitename }}</td>
+                        <td>{{ row.created }}</td>
+                        <td>{{ row.updated }}</td>
+                        <td>
+                            <a @click.prevent="edit(row)" class="btn btn-outline-primary" href="#edit">edit</a> 
+                            <a @click.prevent="remove(row.id)" class="btn btn-outline-danger" href="#delete">delete</a> 
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+​
+            <pagination :search="get" :page="get.page" :rows="get.rows" :total="index.total" @update="list"></pagination>
+        </section>
+​
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="pagination.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

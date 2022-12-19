@@ -15,11 +15,17 @@ public class Favorite {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column
+    private String categoryname;
+
+    @Column
     private String favoriteurl;
 
-    @Column(nullable = false)
-    private String nickname;
+    @Column
+    private String sitename;
+
+    @Column
+    private String siteimageurl;
 
     @Column
     private LocalDateTime created;
