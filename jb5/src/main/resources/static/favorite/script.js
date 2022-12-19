@@ -41,7 +41,12 @@ Vue.createApp({
         },
         remove( id ) {
             $.get('/favorite/delete', { id: id })
-            .done( res => { this.list() });
+            .done( res => { 
+                this.list();
+                this.$router.go(this.$router.currentRoute);
+            });
+
+            
         }
     },
     components: { pagination: m.pagination }

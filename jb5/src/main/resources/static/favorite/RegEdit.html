@@ -1,1 +1,40 @@
-<h2>Reg / Edit Page</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>reg/edit 페이지</h2>
+    
+    <form th:action="@{/favorite/reg}"th:object="${favorite}" method="post">
+        <table>
+            <tr>
+                <th>categoryName</th>
+                <td>
+                    <input type="text" id="categoryname" name="categoryname">
+                </td>
+            </tr>
+            <tr>
+                <th>Url</th>
+                <td>
+                    <input type="text" id="favoriteurl" name="favoriteurl">
+                </td>
+            </tr>
+            <tr>
+                <th>siteName</th>
+                <td>
+                    <input type="text" id="sitename" name="sitename">
+                </td>
+            </tr>
+        </table>
+
+        <input type="submit" value="등록">
+
+    </form>
+
+</body>
+</html>

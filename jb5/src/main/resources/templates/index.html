@@ -65,8 +65,8 @@
                         <td>{{ row.created }}</td>
                         <td>{{ row.updated }}</td>
                         <td>
-                            <a @click="edit(row)" class="btn btn-outline-primary" href="#edit">edit</a> 
-                            <a @click="remove(row.id)" class="btn btn-outline-danger">delete</a> 
+                            <a @click.prevent="edit(row)" class="btn btn-outline-primary" href="#edit">edit</a> 
+                            <a @click.prevent="remove(row.id)" class="btn btn-outline-danger" href="#delete">delete</a> 
                         </td>
                     </tr>
                 </tbody>

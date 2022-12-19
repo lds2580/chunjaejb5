@@ -1,6 +1,11 @@
 package chunjae.jb5.favorite;
 
 import java.time.LocalDateTime;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+
 //spring 3.0 부터는 javax -> jakarta
 // import javax.persistence.*;
 import jakarta.persistence.*;
@@ -28,8 +33,10 @@ public class Favorite {
     private String siteimageurl;
 
     @Column
+    @CreatedDate
     private LocalDateTime created;
 
     @Column
+    @LastModifiedDate
     private LocalDateTime updated;
 }

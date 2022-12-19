@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vue.js</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global."></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min"></script>
+    <script src=""></script>
+</head>
+<body>
+    <section id="app">
+        <h1>{{ h1 }}</h1>
+
+        <button @click="list"> listing </button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>content</th>
+                    <th>created</th>
+                    <th>updated</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th>{{ row.id }}</th>
+                <th>{{ row.title }}</th>
+                <th>{{ row.content }}</th>
+                <th>{{ row.created }}</th>
+                <th>{{ row.updated }}</th>
+            </tbody>
+        </table>
+    </section>
+    <script>
+        Vue.createApp({
+            data(){
+                return{
+                    h1: "Vue js sample program",
+                    index: {
+                        total: 0,
+                        list: [],
+                    }
+                };
+            },
+            mounted(){
+                this.list();
+            },
+            method: {
+                list(){
+                    jQuery.get("/favorite")
+                    .done( res => {
+                        this.index = res;
+                    })
+                }
+            }
+        }).mount('#app')
+
+    </script>
+</body>
+</html>

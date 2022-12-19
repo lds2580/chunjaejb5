@@ -93,10 +93,4 @@ class FavoriteRestController {
     Favorite save(Favorite favorite) {
         return repos.save(favorite);
     }
-
-    @GetMapping("favorite/delete")
-    void delete(Long id) {
-        repos.deleteById(id);
-    }
-
 }
