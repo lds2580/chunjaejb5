@@ -6,6 +6,7 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
     <title>favoritList</title>
 </head>
 <body>
@@ -13,7 +14,6 @@
             <h1>{{ title }}</h1>
             <p v-html="contents"></p>
             <!-- <button @click="list" class="btn btn-primary">listing</button>
-​
             <form @submit.prevent="save" method="post" class="py-5" action="/favorite/save">
                 <div>
                     <label>title</label>
@@ -27,33 +27,39 @@
             </form> -->
             <header>
                 <div class="wrap">
-                    <div class="category">
-                        <select name="category">
-                            <option value="" selected="selected">선택</option>
-                            <option value="edu">교육</option>
-                            <option value="shop">쇼핑</option>
-                            <option value="search">검색</option>
-                        </select>
-                    </div>
-                    <form name="input" method="post">
-                        <input type="text" name="url" placeholder="   url주소를 입력해주세요.">
-                        <button type="button" class="btn btn-outline-primary">SAVE</button>
-                    </form>
+                    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color : #78c2ad">
+                        <div class="category">
+                        <div class="d-flex justify-content-between">
+                            <div class="form-group">
+                                <select class="form-select" id="category">
+                                    <option value="" selected="selected">선택</option>
+                                    <option value="edu">교육</option>
+                                    <option value="shop">쇼핑</option>
+                                    <option value="search">검색</option>
+                                </select>
+                            </div>                    
+                            <form name="input" method="post">
+                                <input class="form-control me-sm-2" type="text" name="url" placeholder="   url주소를 입력해주세요.">
+                                <button class="btn btn-secondary my-2 my-sm-0 border-0" style="background-color : #f3969a" type="submit">SAVE</button>
+                            </form>
+                        </div>
+                    </nav>
                     <figure>
-                        <img src="https://img.youtube.com/vi/izWwT4moEYk/hqdefault.jpg" alt="">
+                        <img src="http://i.ytimg.com/vi/izWwT4moEYk/maxresdefault.jpg" alt="멈머사진">
                     </figure>
                 </div>
             </header>
-            <table class="table table-striped">
+            <table class="table table-hover border border-2" style="border-radius: 16px;">
                 <caption style="caption-side: top;" class="text-end">total: {{ index.total }}</caption>
                 <thead>
-                    <tr style="text-align: center;">
+                    <tr style="text-align: center;" >
                         <th>id</th>
                         <th>categoryName</th>
                         <th class="wide">favoriteUrl</th>
                         <th>sitename</th>
                         <th>created</th>
                         <th>updated</th>
+                        <th> </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,18 +71,16 @@
                         <td>{{ row.created }}</td>
                         <td>{{ row.updated }}</td>
                         <td>
-                            <a @click="edit(row)" class="btn btn-outline-primary" href="#edit">edit</a> 
-                            <a @click="remove(row.id)" class="btn btn-outline-danger">delete</a> 
+                            <a @click.prevent="edit(row)" class="btn btn-outline-primary" href="#edit">edit</a>
+                            <a @click.prevent="remove(row.id)" class="btn btn-outline-secondary" href="#delete">delete</a>
                         </td>
                     </tr>
                 </tbody>
             </table>
-            
-​
             <pagination :search="get" :page="get.page" :rows="get.rows" :total="index.total" @update="list"></pagination>
         </section>
-​
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="
+https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script src="pagination.js"></script>
 <script src="script.js"></script>
 </body>

@@ -37,23 +37,28 @@ body {
 /* header */
 header {
     margin: 60px 0;
-    
+}
+header nav {
+    height: 60px;
 }
 header .category, header form{
     float: left;
 }
-header .category select{
-    width: 120px;
-    height: 48px;
+header .category {
+    padding-left: 12px;
+}
+header .category .select{
+    width: 80px;
+    height: 26px;
     margin-right: 30px;
     border: none;
     border-radius: 8px;
 }
 header form input:first-child{
-    width: 1120px;
+    width: 990px;
     height: 48px;
     position: relative;
-    left: 0;
+    left: 15px;
     border-radius: 8px;
     border: none;
 }
@@ -62,7 +67,7 @@ header form button{
     width: 80px;
     position: absolute;
     right: 13px;
-    top: 3px;
+    top: 9px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -75,17 +80,20 @@ header figure{
     padding: 80px 0 0;
 }
 header figure img {
-    width: 300px;
+    width: 600px;
     border-radius: 16px;
 }
-​
 table th {
     text-align: center;
 }
 table td {
     text-align: center;
+    line-height: 54.5px;
+    box-sizing: border-box;
+    line-height: 20px;
+    vertical-align: middle;
 }
-​
+
 .wide {
-    width: 600px;
+    width: 350px;
 }
