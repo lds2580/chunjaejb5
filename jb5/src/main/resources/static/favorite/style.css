@@ -55,13 +55,25 @@ header .category .select{
     border-radius: 8px;
 }
 header form input:first-child{
-    width: 990px;
+    width: 190px;
     height: 48px;
     position: relative;
-    left: 15px;
+    left: 10px;
     border-radius: 8px;
     border: none;
+    display: inline-block;
 }
+
+header form input:nth-child(2){
+    width: 800px;
+    height: 48px;
+    position: relative;
+    left: 12px;
+    border-radius: 8px;
+    border: none;
+    display: inline-block;
+}
+
 header form button{
     height: 42px;
     width: 80px;
